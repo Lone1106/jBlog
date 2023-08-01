@@ -1,7 +1,17 @@
 <template>
-	<the-header></the-header>
-	<router-view></router-view>
-	<the-footer></the-footer>
+	<div
+		class="h-screen"
+		:class="{ 'bg-light': !isDarkMode, 'bg-dark': isDarkMode }"
+	>
+		<div
+			class="lg:w-[1100px] mx-12 lg:mx-auto"
+			:class="{ 'text-light': isDarkMode }"
+		>
+			<the-header></the-header>
+			<router-view></router-view>
+			<the-footer></the-footer>
+		</div>
+	</div>
 </template>
 
 <style>
@@ -10,20 +20,15 @@
 	@tailwind base;
 	@tailwind components;
 	@tailwind utilities;
-
-	* {
-		margin: 0;
-		padding: 0;
-		box-sizing: border-box;
-	}
-
-	body {
-		font-family: "Inter", sans-serif;
-		font-size: 62.5%;
-	}
 </style>
 
 <script setup>
+	import { useStore } from "vuex";
+	import { computed } from "vue";
+
 	import TheHeader from "./components/layout/TheHeader.vue";
 	import TheFooter from "./components/layout/TheFooter.vue";
+
+	const store = useStore();
+	const isDarkMode = computed(() => store.getters.isDarkMode);
 </script>
