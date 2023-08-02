@@ -1,1 +1,5 @@
-export default {};
+export default {
+	getAllPosts(state) {
+		return state.posts;
+	},
+};

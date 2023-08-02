@@ -1,5 +1,5 @@
 <template>
-	<header class="w-full flex justify-between pt-12 pb-12">
+	<header class="w-full flex justify-between py-12">
 		<div class="text-accent tracking-widest">
 			<router-link to="/">
 				<span class="text-4xl font-bold">j</span>

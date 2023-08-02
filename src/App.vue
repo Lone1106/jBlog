@@ -8,7 +8,9 @@
 			:class="{ 'text-light': isDarkMode }"
 		>
 			<the-header></the-header>
-			<router-view></router-view>
+			<main>
+				<router-view></router-view>
+			</main>
 			<the-footer></the-footer>
 		</div>
 	</div>

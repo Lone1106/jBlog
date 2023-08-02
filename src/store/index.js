@@ -12,7 +12,6 @@ const store = createStore({
 	mutations: {
 		changeMode(state) {
 			state.darkMode = !state.darkMode;
-			console.log(state.darkMode);
 		},
 	},
 	getters: {

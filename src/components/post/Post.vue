@@ -1,3 +1,7 @@
 <template>
-	<h1>Single post page</h1>
+	<h1>Single post page of {{ postId }}</h1>
 </template>
+
+<script setup>
+	const props = defineProps(["postId"]);
+</script>

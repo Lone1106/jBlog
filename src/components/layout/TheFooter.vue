@@ -1,6 +1,8 @@
 <template>
-	<footer class="w-full flex justify-between text-aside pt-12 pb-12">
-		<div class="flex gap-4">
+	<footer
+		class="w-full flex flex-col lg:flex-row justify-between gap-2 text-aside py-12"
+	>
+		<div class="flex gap-4 justify-center lg:justify-start">
 			<a
 				href="https://github.com/Lone1106"
 				class="hover:text-accent transition-colors"
@@ -74,7 +76,9 @@
 			</a>
 		</div>
 
-		<div>&copy; {{ copyYear }} Jan Reichherzer</div>
+		<div class="flex justify-center lg:justify-start">
+			&copy; {{ copyYear }} Jan Reichherzer
+		</div>
 	</footer>
 </template>
 
