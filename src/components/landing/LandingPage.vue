@@ -15,9 +15,11 @@
 
 <script setup>
 	import { useStore } from "vuex";
+
 	import PostItem from "./PostItem.vue";
 	import SearchFilter from "./SearchFilter.vue";
 
 	const store = useStore();
+
 	const blogPosts = store.getters["posts/getAllPosts"];
 </script>

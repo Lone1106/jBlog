@@ -7,21 +7,31 @@ const store = createStore({
 	state() {
 		return {
 			darkMode: true,
+			isLoggedIn: false,
 		};
 	},
 	mutations: {
 		changeMode(state) {
 			state.darkMode = !state.darkMode;
 		},
+		setLoggedInStatus(state) {
+			state.isLoggedIn = !state.isLoggedIn;
+		},
 	},
 	getters: {
 		isDarkMode(state) {
 			return state.darkMode;
 		},
+		loggedInStatus(state) {
+			return state.isLoggedIn;
+		},
 	},
 	actions: {
 		toggleDarkMode(context) {
 			context.commit("changeMode");
+		},
+		toggleLogin(context) {
+			context.commit("setLoggedInStatus");
 		},
 	},
 	modules: {

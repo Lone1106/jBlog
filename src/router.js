@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from "vue-router";
+import store from "./store/index.js";
 
 import LandingPage from "./components/landing/LandingPage.vue";
 import LoginForm from "./components/forms/LoginForm.vue";
@@ -16,5 +17,4 @@ const router = createRouter({
 		{ path: "/:notFound(.*)", component: null },
 	],
 });
-
 export default router;

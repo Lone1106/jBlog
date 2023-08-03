@@ -1,18 +1,13 @@
 <template>
 	<div
-		class="h-screen"
-		:class="{ 'bg-light': !isDarkMode, 'bg-dark': isDarkMode }"
+		class="lg:w-[1100px] h-screen mx-12 lg:mx-auto flex flex-col justify-between"
+		:class="{ 'text-light': isDarkMode }"
 	>
-		<div
-			class="lg:w-[1100px] mx-12 lg:mx-auto"
-			:class="{ 'text-light': isDarkMode }"
-		>
-			<the-header></the-header>
-			<main>
-				<router-view></router-view>
-			</main>
-			<the-footer></the-footer>
-		</div>
+		<the-header @toggle-color="setDarkMode"></the-header>
+		<main>
+			<router-view></router-view>
+		</main>
+		<the-footer></the-footer>
 	</div>
 </template>
 
@@ -22,6 +17,14 @@
 	@tailwind base;
 	@tailwind components;
 	@tailwind utilities;
+
+	.bg-dark {
+		background: #101010;
+	}
+
+	.bg-light {
+		background: #f5f5f5;
+	}
 </style>
 
 <script setup>
@@ -33,4 +36,17 @@
 
 	const store = useStore();
 	const isDarkMode = computed(() => store.getters.isDarkMode);
+
+	function setDarkMode() {
+		store.dispatch("toggleDarkMode");
+		const body = document.querySelector("body");
+
+		if (isDarkMode.value) {
+			body.classList.add("bg-dark");
+			body.classList.remove("bg-light");
+		} else if (!isDarkMode.value) {
+			body.classList.add("bg-light");
+			body.classList.remove("bg-dark");
+		}
+	}
 </script>
