@@ -2,9 +2,9 @@
 	<section
 		class="w-full h-full lg:min-h-screen flex flex-col justify-start gap-12"
 	>
-		<search-filter></search-filter>
+		<search-filter @emit-filter="setFilter"></search-filter>
 		<post-item
-			v-for="post in allPosts"
+			v-for="post in posts"
 			:id="post.id"
 			:title="post.title"
 			:date="post.date"
@@ -17,10 +17,20 @@
 
 <script setup>
 	import { useStore } from "vuex";
+	import { computed } from "vue";
 
 	import PostItem from "./PostItem.vue";
 	import SearchFilter from "./SearchFilter.vue";
 
 	const store = useStore();
 	const allPosts = store.getters["posts/getAllPosts"];
+
+	const posts = computed(() => store.getters["posts/filterPosts"]);
+
+	function setFilter(query) {
+		store.dispatch({
+			type: "posts/setFilterValue",
+			query,
+		});
+	}
 </script>
