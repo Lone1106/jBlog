@@ -1,8 +1,10 @@
 <template>
-	<section class="w-full flex flex-col gap-12">
+	<section
+		class="w-full h-full lg:min-h-screen flex flex-col justify-start gap-12"
+	>
 		<search-filter></search-filter>
 		<post-item
-			v-for="post in blogPosts"
+			v-for="post in allPosts"
 			:id="post.id"
 			:title="post.title"
 			:date="post.date"
@@ -20,6 +22,5 @@
 	import SearchFilter from "./SearchFilter.vue";
 
 	const store = useStore();
-
-	const blogPosts = store.getters["posts/getAllPosts"];
+	const allPosts = store.getters["posts/getAllPosts"];
 </script>

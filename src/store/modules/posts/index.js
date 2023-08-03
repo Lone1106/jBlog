@@ -15,7 +15,7 @@ export default {
 						"A short guide on how to use this dummy blog project.",
 					tags: ["HTML", "CSS", "VUE"],
 					author: "Jan",
-					content: "",
+					content: "<h1>Testing placement for post 1</h1>",
 				},
 				{
 					id: 2,
@@ -24,7 +24,7 @@ export default {
 					description: "How to properly use VueJS.",
 					tags: ["VUE"],
 					author: "Jan",
-					content: "",
+					content: "<h1>Testing placement for post 2</h1>",
 				},
 				{
 					id: 3,
@@ -33,7 +33,7 @@ export default {
 					description: "Let me tell you about the meaning of life!",
 					tags: ["ADVICE"],
 					author: "Jan",
-					content: "",
+					content: "<h1>Testing placement for post 3</h1>",
 				},
 			],
 		};
