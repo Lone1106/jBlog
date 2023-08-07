@@ -2,8 +2,8 @@
 	<header class="w-full flex justify-between py-12">
 		<div class="text-accent tracking-widest">
 			<router-link to="/">
-				<span class="text-4xl font-bold">j</span>
-				<span class="text-2xl">Blog</span>
+				<span class="text-2xl font-bold">j</span>
+				<span class="text-1xl">Blog</span>
 			</router-link>
 		</div>
 

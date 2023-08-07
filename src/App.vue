@@ -4,7 +4,7 @@
 		:class="{ 'text-light': isDarkMode }"
 	>
 		<the-header @toggle-color="setDarkMode"></the-header>
-		<main>
+		<main class="text-lg">
 			<router-view></router-view>
 		</main>
 		<the-footer></the-footer>

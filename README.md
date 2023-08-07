@@ -6,18 +6,20 @@ In this practive project I built a simple blog website using VueJS together with
 
 ## User Data to test the application
 
-**Email:** _to be added_ \
-**Password:** _to be added_
+**Email:** admin@test.de \
+**Password:** 12345
 
 ## Planned Features
 
 - Read Blog posts
 - Filter all posts by tags and/or keywords
-- Login to add and delte posts (only predefined users)
+- Login to add and delte posts (only predefined user/s)
+- Dark and Light mode switch
 
 ## Planned Routes
 
 - /
 - /login
 - /add
+- /posts
 - /posts/:postId
