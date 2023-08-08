@@ -18,7 +18,7 @@
 					</p> -->
 				</div>
 				<input
-					v-model="title"
+					v-model.trim="title"
 					type="text"
 					id="title"
 					name="title"
@@ -38,7 +38,7 @@
 					</p> -->
 				</div>
 				<input
-					v-model="description"
+					v-model.trim="description"
 					type="text"
 					id="description"
 					name="description"
@@ -140,7 +140,7 @@
 					</p> -->
 				</div>
 				<textarea
-					v-model="postContent"
+					v-model.trim="postContent"
 					type="text"
 					id="content"
 					name="content"
@@ -161,22 +161,9 @@
 <script setup>
 	import { ref } from "vue";
 	import { useStore } from "vuex";
+	import { v4 as uuidv4 } from "uuid";
 
 	const store = useStore();
-
-	// function addToContentArea(textToAdd) {
-	// 	const textArea = document.getElementById("content");
-	// 	let startPostion = textArea.selectionStart;
-	// 	let endPosition = textArea.selectionEnd;
-
-	// 	textArea.value = `${textArea.value.substring(
-	// 		0,
-	// 		startPostion,
-	// 	)}${textToAdd}${textArea.value.substring(
-	// 		endPosition,
-	// 		textArea.value.length,
-	// 	)}`;
-	// }
 
 	const title = ref("");
 	const description = ref("");
@@ -185,8 +172,8 @@
 
 	function addPost() {
 		const newPost = {
-			id: 555,
-			date: new Date().toLocaleDateString("de"),
+			id: uuidv4(),
+			date: new Date().toLocaleDateString("en-gb"),
 			title: title.value,
 			description: description.value,
 			tags: tags.value,
@@ -198,5 +185,6 @@
 			type: "posts/addNewPost",
 			newPost,
 		});
+		console.log(tags.value);
 	}
 </script>

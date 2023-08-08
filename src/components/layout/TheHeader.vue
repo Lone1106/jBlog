@@ -8,7 +8,7 @@
 		</div>
 
 		<div class="flex justify-end gap-4 items-center">
-			<div>
+			<div class="flex items-center">
 				<button v-if="isDarkMode" @click="toggleColor">
 					<svg
 						xmlns="http://www.w3.org/2000/svg"

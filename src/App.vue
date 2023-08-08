@@ -25,6 +25,39 @@
 	.bg-light {
 		background: #f5f5f5;
 	}
+
+	.markdown h3 {
+		font-weight: bold;
+		color: #228be6;
+		margin-bottom: 8px;
+		margin-top: 24px;
+		font-size: 24px;
+		letter-spacing: 0.6px;
+	}
+
+	.markdown h4 {
+		font-weight: bold;
+		font-size: 20px;
+	}
+
+	.markdown img {
+		border-radius: 12px;
+		margin: 24px 0 24px 0;
+	}
+
+	.markdown a {
+		color: #228be6;
+	}
+
+	.markdown li {
+		margin-bottom: 12px;
+	}
+
+	.markdown strong {
+		display: block;
+		letter-spacing: 0.6px;
+		margin-bottom: 2px;
+	}
 </style>
 
 <script setup>

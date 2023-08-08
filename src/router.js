@@ -1,10 +1,11 @@
 import { createRouter, createWebHistory } from "vue-router";
 import store from "./store/index.js";
 
-import LandingPage from "./components/landing/LandingPage.vue";
-import LoginForm from "./components/forms/LoginForm.vue";
-import AddPostForm from "./components/forms/AddPostForm.vue";
-import Post from "./components/post/Post.vue";
+const LandingPage = () => import("./components/landing/LandingPage.vue");
+const LoginForm = () => import("./components/forms/LoginForm.vue");
+const AddPostForm = () => import("./components/forms/AddPostForm.vue");
+const Post = () => import("./components/post/Post.vue");
+const NotFound = () => import("./components/notFound/NotFound.vue");
 
 const router = createRouter({
 	history: createWebHistory(),
@@ -14,7 +15,7 @@ const router = createRouter({
 		{ path: "/posts/:postId", props: true, component: Post },
 		{ path: "/login", component: LoginForm },
 		{ path: "/addPost", component: AddPostForm },
-		{ path: "/:notFound(.*)", component: null },
+		{ path: "/:notFound(.*)", component: NotFound },
 	],
 });
 
