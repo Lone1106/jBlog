@@ -17,4 +17,13 @@ const router = createRouter({
 		{ path: "/:notFound(.*)", component: null },
 	],
 });
+
+// ROUTE GUARD FOR ADD POST
+// router.beforeEach((to, from) => {
+// 	const auth = store.getters["loggedInStatus"];
+// 	if (to.fullPath === "/addPost" && !auth) {
+// 		router.replace("/");
+// 		return false;
+// 	}
+// });
 export default router;

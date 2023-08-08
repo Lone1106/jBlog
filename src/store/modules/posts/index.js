@@ -10,7 +10,7 @@ export default {
 			posts: [
 				{
 					id: 1,
-					date: "02-08-2023",
+					date: "2.8.2023",
 					title: "How to use this blog",
 					description:
 						"A short guide on how to use this dummy blog project.",
@@ -20,7 +20,7 @@ export default {
 				},
 				{
 					id: 2,
-					date: "02-08-2023",
+					date: "2.8.2023",
 					title: "A short guide on VueJS",
 					description: "How to properly use VueJS.",
 					tags: ["VUE"],
@@ -29,7 +29,7 @@ export default {
 				},
 				{
 					id: 3,
-					date: "02-08-2023",
+					date: "2.8.2023",
 					title: "Whats the meaning of life",
 					description: "Let me tell you about the meaning of life!",
 					tags: ["ADVICE"],

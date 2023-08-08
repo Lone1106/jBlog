@@ -1,6 +1,6 @@
 <template>
 	<div
-		class="lg:w-[1100px] h-screen mx-12 lg:mx-auto flex flex-col justify-between"
+		class="lg:w-[1100px] lg:h-screen mx-12 lg:mx-auto flex flex-col justify-between"
 		:class="{ 'text-light': isDarkMode }"
 	>
 		<the-header @toggle-color="setDarkMode"></the-header>

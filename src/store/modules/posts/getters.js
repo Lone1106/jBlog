@@ -7,7 +7,7 @@ export default {
 	},
 	filterPosts(state, getters) {
 		return state.posts.filter((p) =>
-			p.title.toLowerCase().includes(getters.getFilter.toLowerCase())
+			p.title.toLowerCase().includes(getters.getFilter.toLowerCase()),
 		);
 	},
 };

@@ -1,5 +1,5 @@
 <template>
-	<header class="w-full flex justify-between py-12">
+	<header class="w-full flex justify-between items-center py-12">
 		<div class="text-accent tracking-widest">
 			<router-link to="/">
 				<span class="text-2xl font-bold">j</span>
@@ -53,6 +53,13 @@
 					</svg>
 				</button>
 			</div>
+			<router-link
+				class="text-sm text-accent"
+				v-if="!isLoggedIn"
+				to="/login"
+			>
+				Login
+			</router-link>
 			<button
 				v-if="isLoggedIn"
 				@click="logout"

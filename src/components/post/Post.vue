@@ -2,14 +2,18 @@
 	<section
 		class="w-full h-full lg:min-h-screen flex flex-col justify-start"
 	>
-		<h2
-			class="uppercase text-accent text-4xl mb-4 font-bold tracking-wide"
-		>
-			{{ post.title }}
-		</h2>
+		<div class="mb-8">
+			<h2
+				class="uppercase text-accent text-4xl mb-4 font-bold tracking-wide"
+			>
+				{{ post.title }}
+			</h2>
+			<tag-list :tags="post.tags" />
+			<p class="text-aside">Added {{ post.date }} by {{ post.author }}</p>
+		</div>
 
 		<!-- TEST POST DATA DELELTE LATER ON -->
-		<!-- <figure>
+		<!-- 		<figure>
 			<div class="mb-8">
 				<p>
 					In this blog post I will guide you through this VueJS blog

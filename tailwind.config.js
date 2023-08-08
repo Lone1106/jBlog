@@ -10,7 +10,7 @@ export default {
         accent: "#228be6",
         aside: "#404040",
         dark: "#101010",
-        light: "#F5F5F5",
+        light: "#F2F2F2",
       },
     },
   },
