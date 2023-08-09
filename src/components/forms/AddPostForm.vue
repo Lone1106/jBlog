@@ -13,10 +13,16 @@
 						for="title"
 						>Title</label
 					>
+					<p
+						class="text-sm text-red-700 font-bold"
+						v-for="error in v$.title.$errors"
+						:key="error.$uid"
+					>
+						{{ error.$message }}
+					</p>
 				</div>
 				<input
-					v-model.trim="title"
-					required="true"
+					v-model.trim="formData.title"
 					type="text"
 					id="title"
 					name="title"
@@ -31,11 +37,17 @@
 						for="description"
 						>Description</label
 					>
+					<p
+						class="text-sm text-red-700 font-bold"
+						v-for="error in v$.description.$errors"
+						:key="error.$uid"
+					>
+						{{ error.$message }}
+					</p>
 				</div>
 				<input
-					v-model.trim="description"
+					v-model.trim="formData.description"
 					type="text"
-					required="true"
 					id="description"
 					name="description"
 					class="w-full mb-1 px-4 py-2 rounded-xl text-aside bg-inherit border border-aside focus:outline-none focus:border-accent transition-colors"
@@ -49,12 +61,19 @@
 						for="description"
 						>Tags</label
 					>
+					<p
+						class="text-sm text-red-700 font-bold"
+						v-for="error in v$.tags.$errors"
+						:key="error.$uid"
+					>
+						{{ error.$message }}
+					</p>
 				</div>
 
 				<ul class="flex gap-4">
 					<li class="flex items-center">
 						<input
-							v-model="tags"
+							v-model="formData.tags"
 							value="HMTL"
 							type="checkbox"
 							name="html"
@@ -65,7 +84,7 @@
 					</li>
 					<li class="flex items-center">
 						<input
-							v-model="tags"
+							v-model="formData.tags"
 							value="CSS"
 							type="checkbox"
 							name="css"
@@ -76,7 +95,7 @@
 					</li>
 					<li class="flex items-center">
 						<input
-							v-model="tags"
+							v-model="formData.tags"
 							value="JS"
 							type="checkbox"
 							name="js"
@@ -87,7 +106,7 @@
 					</li>
 					<li class="flex items-center">
 						<input
-							v-model="tags"
+							v-model="formData.tags"
 							value="React"
 							type="checkbox"
 							name="react"
@@ -98,7 +117,7 @@
 					</li>
 					<li class="flex items-center">
 						<input
-							v-model="tags"
+							v-model="formData.tags"
 							value="VueJS"
 							type="checkbox"
 							name="vue"
@@ -109,7 +128,7 @@
 					</li>
 					<li class="flex items-center">
 						<input
-							v-model="tags"
+							v-model="formData.tags"
 							value="Python"
 							type="checkbox"
 							name="python"
@@ -128,10 +147,16 @@
 						for="content"
 						>Content</label
 					>
+					<p
+						class="text-sm text-red-700 font-bold"
+						v-for="error in v$.postContent.$errors"
+						:key="error.$uid"
+					>
+						{{ error.$message }}
+					</p>
 				</div>
 				<textarea
-					v-model.trim="postContent"
-					required="true"
+					v-model.trim="formData.postContent"
 					type="text"
 					id="content"
 					name="content"
@@ -150,36 +175,55 @@
 </template>
 
 <script setup>
-	import { ref, computed } from "vue";
+	import { reactive, computed } from "vue";
 	import { useStore } from "vuex";
 	import { v4 as uuidv4 } from "uuid";
 	import { useRouter } from "vue-router";
+	import { useVuelidate } from "@vuelidate/core";
+	import { required } from "@vuelidate/validators";
 
 	const store = useStore();
 	const router = useRouter();
 
 	const author = computed(() => store.getters["getCurrentAuthor"]);
 
-	const title = ref("");
-	const description = ref("");
-	const postContent = ref("");
-	const tags = ref([]);
+	const formData = reactive({
+		title: "",
+		description: "",
+		postContent: "",
+		tags: [],
+	});
 
-	function addPost() {
-		const newPost = {
-			id: uuidv4(),
-			date: new Date().toLocaleDateString("en-gb"),
-			title: title.value,
-			description: description.value,
-			tags: tags.value,
-			author: author,
-			content: postContent.value,
+	const rules = computed(() => {
+		return {
+			title: { required },
+			description: { required },
+			postContent: { required },
+			tags: { required },
 		};
+	});
 
-		store.dispatch({
-			type: "posts/addNewPost",
-			newPost,
-		});
-		router.replace("/");
+	const v$ = useVuelidate(rules, formData);
+
+	async function addPost() {
+		const result = await v$.value.$validate();
+
+		if (result) {
+			const newPost = {
+				id: uuidv4(),
+				date: new Date().toLocaleDateString("en-gb"),
+				title: formData.title,
+				description: formData.description,
+				tags: formData.tags,
+				author: author,
+				content: formData.postContent,
+			};
+
+			store.dispatch({
+				type: "posts/addNewPost",
+				newPost,
+			});
+			router.replace("/");
+		}
 	}
 </script>

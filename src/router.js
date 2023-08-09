@@ -21,6 +21,7 @@ const router = createRouter({
 
 router.beforeEach((to, from) => {
 	const auth = store.getters["loggedInStatus"];
+
 	if (to.fullPath === "/addPost" && !auth) {
 		router.replace("/");
 		return false;

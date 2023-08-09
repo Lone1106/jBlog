@@ -2,7 +2,9 @@
 
 In this practive project I built a simple blog website using VueJS together with Vue Router and VueX as well as Tailwind CSS.
 
-**The app will only be using Vuex and no external database!**
+You will find more information on how to use the blog in the **How to use this blog** post on the blog itself!
+
+**The app will only be using Vuex and no external database! As such the added data will be deleted on every refresh**
 
 ## User Data to test the application
 
@@ -12,8 +14,8 @@ In this practive project I built a simple blog website using VueJS together with
 ## Planned Features
 
 - Read Blog posts
-- Filter all posts by tags and/or keywords
-- Login to add and delte posts (only predefined user/s)
+- Filter all posts by search
+- Login to add/delte/edit posts **(only predefined user/s, see above)**
 - Dark and Light mode switch
 
 ## Planned Routes
