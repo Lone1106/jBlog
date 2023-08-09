@@ -11,4 +11,10 @@ export default {
 		);
 		return state.posts.splice(postToDelete, 1);
 	},
+	updateOnePost(state, query) {
+		let postToUpdate = state.posts.findIndex(
+			(post) => post.id === query.updatedPost.id,
+		);
+		return (state.posts[postToUpdate] = query.updatedPost);
+	},
 };

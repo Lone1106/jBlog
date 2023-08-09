@@ -8,4 +8,7 @@ export default {
 	deleteOnePost(context, payload) {
 		context.commit("deletePost", payload);
 	},
+	updatePost(context, payload) {
+		context.commit("updateOnePost", payload);
+	},
 };

@@ -11,7 +11,7 @@
 		</router-link>
 		<div v-if="isAuth" class="mt-4">
 			<router-link
-				to="/"
+				:to="updateRoute"
 				class="inline-block mr-4 bg-green-600 rounded-xl py-1 px-10 tracking-wide hover:bg-green-700 transition-colors text-light"
 			>
 				Edit
@@ -52,4 +52,5 @@
 
 	const route = useRoute();
 	const navigateLink = `${route.path}/${props.id}`;
+	const updateRoute = `/edit/${props.id}`;
 </script>
