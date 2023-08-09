@@ -3,9 +3,7 @@
 		class="w-full h-full lg:min-h-screen flex flex-col justify-start"
 	>
 		<div class="mb-8">
-			<h2
-				class="uppercase text-accent text-4xl mb-4 font-bold tracking-wide"
-			>
+			<h2 class="text-accent text-4xl mb-4 font-bold tracking-wide">
 				{{ post.title }}
 			</h2>
 			<tag-list :tags="post.tags" />
@@ -29,5 +27,5 @@
 	const props = defineProps(["postId"]);
 
 	const allPosts = store.getters["posts/getAllPosts"];
-	const post = allPosts.find((p) => p.id === Number(props.postId));
+	const post = allPosts.find((p) => p.id === props.postId);
 </script>

@@ -1,6 +1,6 @@
 <template>
 	<section class="w-full">
-		<label class="text-bold text-xl text-aside mb-2 block">Search</label>
+		<label class="text-bold text-xl mb-2 block">Search</label>
 		<input
 			type="text"
 			placeholder="How to use this blog"

@@ -19,12 +19,11 @@ const router = createRouter({
 	],
 });
 
-// ROUTE GUARD FOR ADD POST
-// router.beforeEach((to, from) => {
-// 	const auth = store.getters["loggedInStatus"];
-// 	if (to.fullPath === "/addPost" && !auth) {
-// 		router.replace("/");
-// 		return false;
-// 	}
-// });
+router.beforeEach((to, from) => {
+	const auth = store.getters["loggedInStatus"];
+	if (to.fullPath === "/addPost" && !auth) {
+		router.replace("/");
+		return false;
+	}
+});
 export default router;

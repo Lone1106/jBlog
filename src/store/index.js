@@ -8,6 +8,7 @@ const store = createStore({
 		return {
 			darkMode: true,
 			isLoggedIn: false,
+			currentAuthor: "",
 		};
 	},
 	mutations: {
@@ -17,6 +18,9 @@ const store = createStore({
 		setLoggedInStatus(state) {
 			state.isLoggedIn = !state.isLoggedIn;
 		},
+		setCurrentAuthor(state, payload) {
+			state.currentAuthor = payload.author;
+		},
 	},
 	getters: {
 		isDarkMode(state) {
@@ -25,6 +29,9 @@ const store = createStore({
 		loggedInStatus(state) {
 			return state.isLoggedIn;
 		},
+		getCurrentAuthor(state) {
+			return state.currentAuthor;
+		},
 	},
 	actions: {
 		toggleDarkMode(context) {
@@ -32,6 +39,9 @@ const store = createStore({
 		},
 		toggleLogin(context) {
 			context.commit("setLoggedInStatus");
+		},
+		setAuthor(context, payload) {
+			context.commit("setCurrentAuthor", payload);
 		},
 	},
 	modules: {

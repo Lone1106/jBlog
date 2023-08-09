@@ -27,17 +27,18 @@
 	}
 
 	.markdown h3 {
-		font-weight: bold;
 		color: #228be6;
-		margin-bottom: 8px;
-		margin-top: 24px;
-		font-size: 24px;
+		margin-bottom: 40px;
+		margin-top: 40px;
+		font-size: 48px;
 		letter-spacing: 0.6px;
+		line-height: 1;
 	}
 
 	.markdown h4 {
-		font-weight: bold;
-		font-size: 20px;
+		font-size: 32px;
+		margin-bottom: 24px;
+		margin-top: 24px;
 	}
 
 	.markdown img {
@@ -47,6 +48,11 @@
 
 	.markdown a {
 		color: #228be6;
+		transition: all 0.2s;
+	}
+
+	.markdown a:hover {
+		text-decoration: underline;
 	}
 
 	.markdown li {
@@ -54,7 +60,6 @@
 	}
 
 	.markdown strong {
-		display: block;
 		letter-spacing: 0.6px;
 		margin-bottom: 2px;
 	}

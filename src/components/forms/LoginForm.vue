@@ -98,6 +98,10 @@
 			password.value === testUser.password
 		) {
 			store.dispatch("toggleLogin");
+			store.dispatch({
+				type: "setAuthor",
+				author: testUser.username,
+			});
 			router.push("/");
 		} else {
 			isError.value = true;

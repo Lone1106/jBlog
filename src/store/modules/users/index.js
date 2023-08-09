@@ -6,6 +6,7 @@ export default {
 		return {
 			admin: {
 				id: 1,
+				username: "sudo",
 				email: "admin@test.de",
 				password: "12345",
 			},

@@ -31,7 +31,7 @@
 
 	const store = useStore();
 	const allPosts = store.getters["posts/getAllPosts"];
-	const isAuth = store.getters["loggedInStatus"];
+	const isAuth = computed(() => store.getters["loggedInStatus"]);
 
 	const posts = computed(() => store.getters["posts/filterPosts"]);
 

@@ -13,12 +13,10 @@
 						for="title"
 						>Title</label
 					>
-					<!-- <p class="text-sm text-red-700 font-bold">
-						Please enter a title
-					</p> -->
 				</div>
 				<input
 					v-model.trim="title"
+					required="true"
 					type="text"
 					id="title"
 					name="title"
@@ -33,13 +31,11 @@
 						for="description"
 						>Description</label
 					>
-					<!-- <p class="text-sm text-red-700 font-bold">
-						Please enter a description
-					</p> -->
 				</div>
 				<input
 					v-model.trim="description"
 					type="text"
+					required="true"
 					id="description"
 					name="description"
 					class="w-full mb-1 px-4 py-2 rounded-xl text-aside bg-inherit border border-aside focus:outline-none focus:border-accent transition-colors"
@@ -53,9 +49,6 @@
 						for="description"
 						>Tags</label
 					>
-					<!-- <p class="text-sm text-red-700 font-bold">
-						Please select some tags
-					</p> -->
 				</div>
 
 				<ul class="flex gap-4">
@@ -135,12 +128,10 @@
 						for="content"
 						>Content</label
 					>
-					<!-- <p class="text-sm text-red-700 font-bold">
-						Please enter content
-					</p> -->
 				</div>
 				<textarea
 					v-model.trim="postContent"
+					required="true"
 					type="text"
 					id="content"
 					name="content"
@@ -159,11 +150,15 @@
 </template>
 
 <script setup>
-	import { ref } from "vue";
+	import { ref, computed } from "vue";
 	import { useStore } from "vuex";
 	import { v4 as uuidv4 } from "uuid";
+	import { useRouter } from "vue-router";
 
 	const store = useStore();
+	const router = useRouter();
+
+	const author = computed(() => store.getters["getCurrentAuthor"]);
 
 	const title = ref("");
 	const description = ref("");
@@ -177,7 +172,7 @@
 			title: title.value,
 			description: description.value,
 			tags: tags.value,
-			author: "me",
+			author: author,
 			content: postContent.value,
 		};
 
@@ -185,6 +180,6 @@
 			type: "posts/addNewPost",
 			newPost,
 		});
-		console.log(tags.value);
+		router.replace("/");
 	}
 </script>
