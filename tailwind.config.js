@@ -8,7 +8,7 @@ export default {
       },
       colors: {
         accent: "#228be6",
-        aside: "#404040",
+        aside: "#9f9f9f",
         dark: "#101010",
         light: "#F2F2F2",
       },
