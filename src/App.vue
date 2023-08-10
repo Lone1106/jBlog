@@ -28,9 +28,12 @@
 		transform: translateY(100px);
 	}
 
-	.route-change-enter-active,
+	.route-change-enter-active {
+		transition: all 0.3s ease-in;
+	}
+
 	.route-change-leave-active {
-		transition: all 0.3s ease;
+		transition: all 0.3s ease-out;
 	}
 
 	.route-change-enter-to,

@@ -2,6 +2,9 @@ export default {
 	setFilter(state, query) {
 		return (state.filter = query.query);
 	},
+	resetSearchFilter(state) {
+		return (state.filter = "");
+	},
 	newPost(state, query) {
 		return state.posts.unshift(query.newPost);
 	},

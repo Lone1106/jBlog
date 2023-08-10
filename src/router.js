@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import store from "./store/index.js";
 
-const LandingPage = () => import("./components/landing/LandingPage.vue");
+import LandingPage from "./components/landing/LandingPage.vue";
 const LoginForm = () => import("./components/forms/LoginForm.vue");
 const AddPostForm = () => import("./components/forms/AddPostForm.vue");
 const EditPostForm = () => import("./components/forms/EditPostForm.vue");

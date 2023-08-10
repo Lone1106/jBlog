@@ -34,7 +34,7 @@
 
 	.post-list-enter-active,
 	.post-list-leave-active {
-		transition: all 0.5s ease;
+		transition: all 0.3s ease;
 	}
 
 	.post-list-enter-to,
@@ -46,7 +46,7 @@
 
 <script setup>
 	import { useStore } from "vuex";
-	import { computed } from "vue";
+	import { computed, onBeforeMount } from "vue";
 
 	import PostItem from "./PostItem.vue";
 	import SearchFilter from "./SearchFilter.vue";
@@ -63,4 +63,8 @@
 			query,
 		});
 	}
+
+	onBeforeMount(() => {
+		store.dispatch("posts/resetFilter");
+	});
 </script>

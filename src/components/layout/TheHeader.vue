@@ -113,7 +113,7 @@
 
 	.toggle-mode-enter-active,
 	.toggle-mode-leave-active {
-		transition: all 0.15s;
+		transition: all 0.25s ease;
 	}
 
 	.toggle-mode-enter-to,
