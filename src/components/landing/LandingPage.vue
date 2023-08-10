@@ -10,7 +10,12 @@
 		>
 			Add new post
 		</router-link>
-		<transition-group tag="div" name="post-list" mode="out-in">
+		<transition-group
+			tag="div"
+			name="post-list"
+			mode="out-in"
+			v-if="posts.length > 0"
+		>
 			<post-item
 				v-for="post in posts"
 				:key="post.id"
@@ -22,6 +27,7 @@
 				:tags="post.tags"
 			></post-item>
 		</transition-group>
+		<p class="text-2xl" v-else>Seems like there are no posts available</p>
 	</section>
 </template>
 
