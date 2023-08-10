@@ -5,7 +5,11 @@
 	>
 		<the-header @toggle-color="setDarkMode"></the-header>
 		<main class="text-lg">
-			<router-view></router-view>
+			<router-view v-slot="{ Component }">
+				<transition name="route-change" mode="out-in">
+					<component :is="Component" />
+				</transition>
+			</router-view>
 		</main>
 		<the-footer></the-footer>
 	</div>
@@ -18,12 +22,31 @@
 	@tailwind components;
 	@tailwind utilities;
 
+	.route-change-enter-from,
+	.route-change-leave-to {
+		opacity: 0;
+		transform: translateY(100px);
+	}
+
+	.route-change-enter-active,
+	.route-change-leave-active {
+		transition: all 0.3s ease;
+	}
+
+	.route-change-enter-to,
+	.route-change-leave-from {
+		opacity: 1;
+		transform: translateY(0);
+	}
+
 	.bg-dark {
 		background: #101010;
+		color: #f5f5f5;
 	}
 
 	.bg-light {
 		background: #f5f5f5;
+		color: #101010;
 	}
 
 	.markdown h3 {

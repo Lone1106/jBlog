@@ -10,17 +10,39 @@
 		>
 			Add new post
 		</router-link>
-		<post-item
-			v-for="post in posts"
-			:id="post.id"
-			:title="post.title"
-			:date="post.date"
-			:description="post.description"
-			:author="post.author"
-			:tags="post.tags"
-		></post-item>
+		<transition-group tag="div" name="post-list" mode="out-in">
+			<post-item
+				v-for="post in posts"
+				:key="post.id"
+				:id="post.id"
+				:title="post.title"
+				:date="post.date"
+				:description="post.description"
+				:author="post.author"
+				:tags="post.tags"
+			></post-item>
+		</transition-group>
 	</section>
 </template>
+
+<style scoped>
+	.post-list-enter-from,
+	.post-list-leave-to {
+		opacity: 0;
+		transform: translateX(100px);
+	}
+
+	.post-list-enter-active,
+	.post-list-leave-active {
+		transition: all 0.5s ease;
+	}
+
+	.post-list-enter-to,
+	.post-list-leave-from {
+		opacity: 1;
+		transform: translateX(0);
+	}
+</style>
 
 <script setup>
 	import { useStore } from "vuex";

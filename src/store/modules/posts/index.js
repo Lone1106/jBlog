@@ -41,6 +41,10 @@ to old and display them
 
 This route will fetch the data for the clicked post from the vue store and diplay it on a new page
 
+#### /edit/:postId
+
+This route lets you edit an existing post if you are logged in
+
 #### /addPost
 
 This route allows you to add a new post to the blog if you

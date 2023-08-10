@@ -1,5 +1,5 @@
 <template>
-	<figure class="w-full">
+	<figure class="w-full mb-12">
 		<router-link :to="navigateLink">
 			<h2 class="text-3xl mb-2 font-bold">{{ title }}</h2>
 			<p class="text-md lg:text-xl mb-2">{{ description }}</p>

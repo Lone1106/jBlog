@@ -4,7 +4,7 @@
 		<input
 			type="text"
 			placeholder="How to use this blog"
-			class="w-full px-4 py-2 rounded-xl text-aside bg-inherit border border-aside focus:outline-none focus:border-accent transition-colors placeholder:text-aside"
+			class="w-full px-4 py-2 rounded-xl text-inherit bg-inherit border border-aside focus:outline-none focus:border-accent transition-colors placeholder:text-aside"
 			v-model.trim="filterText"
 			@keyup="emitFilter"
 		/>

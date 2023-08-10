@@ -13,7 +13,7 @@
 			:id="id"
 			:name="id"
 			rows="10"
-			class="w-full mb-1 px-4 py-2 rounded-xl text-aside bg-inherit border border-aside focus:outline-none focus:border-accent transition-colors resize-none"
+			class="w-full mb-1 px-4 py-2 rounded-xl text-inherit bg-inherit border border-aside focus:outline-none focus:border-accent transition-colors resize-none"
 		></textarea>
 	</div>
 </template>

@@ -25,3 +25,4 @@ You will find more information on how to use the blog in the **How to use this b
 - /add
 - /posts
 - /posts/:postId
+- /edit/:postId

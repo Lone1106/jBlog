@@ -12,7 +12,7 @@
 			:type="type"
 			:id="id"
 			:name="id"
-			class="w-full mb-1 px-4 py-2 rounded-xl text-aside bg-inherit border border-aside focus:outline-none focus:border-accent transition-colors"
+			class="w-full mb-1 px-4 py-2 rounded-xl text-aside bg-inherit border border-aside focus:outline-none focus:border-accent transition-colors text-inherit"
 		/>
 	</div>
 </template>

@@ -103,7 +103,7 @@
 		const result = await v$.value.$validate();
 
 		if (result) {
-			const tagsSplit = formData.tags.split(",");
+			const tagsSplit = formData.tags.toUpperCase().split(",");
 			const newPost = {
 				id: uuidv4(),
 				date: new Date().toLocaleDateString("en-gb"),
