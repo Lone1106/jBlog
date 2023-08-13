@@ -38,6 +38,9 @@
 
 			<form-button text="Login" />
 		</form>
+		<p class="text-aside text-sm mt-4">
+			Dummy Account: Email: admin@test.de - PW: 12345
+		</p>
 	</section>
 </template>
 
