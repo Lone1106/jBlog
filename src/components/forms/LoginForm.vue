@@ -29,7 +29,7 @@
 			>
 				<p
 					class="text-sm text-red-700 font-bold"
-					v-for="error in v$.email.$errors"
+					v-for="error in v$.password.$errors"
 					:key="error.$uid"
 				>
 					{{ error.$message }}

@@ -60,8 +60,10 @@
 					class="text-sm text-red-700 font-bold"
 					v-for="error in v$.postContent.$errors"
 					:key="error.$uid"
-				></p
-			></textarea-input>
+				>
+					{{ error.$message }}
+				</p></textarea-input
+			>
 
 			<form-button text="Add" />
 		</form>
